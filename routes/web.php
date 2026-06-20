@@ -76,3 +76,4 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('settings', [AdminSiteSettingController::class, 'edit'])->name('settings.edit');
     Route::put('settings', [AdminSiteSettingController::class, 'update'])->name('settings.update');
 });
+

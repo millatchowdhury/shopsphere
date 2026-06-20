@@ -12,10 +12,9 @@
                     <div class="col-md-6"><label class="form-label">Email</label><input class="form-control" type="email" name="customer_email" value="{{ old('customer_email', auth()->user()?->email) }}" required></div>
                     <div class="col-md-6"><label class="form-label">Phone</label><input class="form-control" name="customer_phone" value="{{ old('customer_phone', auth()->user()?->phone) }}" required></div>
                     <div class="col-md-6"><label class="form-label">Coupon Code</label><input class="form-control" name="coupon_code" value="{{ old('coupon_code') }}"></div>
-                    <div class="col-12"><label class="form-label">Shipping Address</label><textarea class="form-control" name="shipping_address" rows="4" required>{{ old('shipping_address', auth()->user()?->address) }}</textarea></div>
                     <div class="col-12"><label class="form-label">Order Notes</label><textarea class="form-control" name="notes" rows="3">{{ old('notes') }}</textarea></div>
                 </div>
-                <button class="btn btn-dark mt-4">Place COD Order</button>
+                <button class="btn btn-dark mt-4">Purchase Now</button>
             </form>
         </div>
         <div class="col-lg-5">

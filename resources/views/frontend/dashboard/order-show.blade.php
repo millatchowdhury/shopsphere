@@ -7,7 +7,7 @@
             <div><h1 class="h3">Invoice</h1><p class="text-muted">{{ $order->order_number }}</p></div>
             <span class="badge text-bg-secondary align-self-start status-pill">{{ $order->status }}</span>
         </div>
-        <p><strong>Ship to:</strong> {{ $order->customer_name }}, {{ $order->shipping_address }}</p>
+        <p><strong>Customer:</strong> {{ $order->customer_name }}</p>
         <table class="table">
             <thead><tr><th>Product</th><th>SKU</th><th>Qty</th><th class="text-end">Total</th></tr></thead>
             <tbody>
