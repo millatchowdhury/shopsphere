@@ -55,13 +55,13 @@ class BuyNowCheckoutTest extends TestCase
         $this->assertSame([], session('buy_now_cart', []));
     }
 
-    public function test_product_card_buy_now_links_to_product_details(): void
+    public function test_product_card_buy_now_posts_directly_to_checkout(): void
     {
         $product = Product::factory()->create(['stock_quantity' => 10]);
 
         $this->get(route('products.index'))
             ->assertOk()
-            ->assertSee(route('products.show', $product), false)
+            ->assertSee(route('cart.buy-now', $product), false)
             ->assertSee('Buy Now');
     }
 

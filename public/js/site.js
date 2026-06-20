@@ -38,6 +38,8 @@
             return;
         }
 
+        chat.dataset.liveChatReady = 'true';
+
         function showMessage(element, message) {
             if (!element) {
                 return;
