@@ -13,7 +13,7 @@
             <form method="POST" action="{{ route('cart.store', $product) }}" class="d-flex flex-column flex-sm-row gap-2 mt-3">
                 @csrf
                 <button class="btn btn-dark flex-fill" @disabled($product->stock_quantity < 1)>Add to Cart</button>
-                <button class="btn btn-outline-dark flex-fill" formaction="{{ route('cart.buy-now', $product) }}" @disabled($product->stock_quantity < 1)>Buy Now</button>
+                <a class="btn btn-outline-dark flex-fill @if($product->stock_quantity < 1) disabled @endif" href="{{ route('products.show', $product) }}" @if($product->stock_quantity < 1) aria-disabled="true" tabindex="-1" @endif>Buy Now</a>
             </form>
         </div>
     </div>

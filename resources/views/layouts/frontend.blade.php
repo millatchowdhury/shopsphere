@@ -90,34 +90,5 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{ $assetBase }}/js/site.js?v={{ file_exists(public_path('js/site.js')) ? filemtime(public_path('js/site.js')) : time() }}"></script>
-<script>
-    (function () {
-        var chat = document.querySelector('[data-live-chat]');
-
-        if (!chat || chat.dataset.liveChatReady === 'true') {
-            return;
-        }
-
-        var panel = chat.querySelector('[data-live-chat-panel]');
-        var toggle = chat.querySelector('[data-live-chat-toggle]');
-        var close = chat.querySelector('[data-live-chat-close]');
-
-        if (!panel || !toggle) {
-            return;
-        }
-
-        chat.dataset.liveChatReady = 'true';
-
-        toggle.addEventListener('click', function () {
-            panel.classList.toggle('d-none');
-        });
-
-        if (close) {
-            close.addEventListener('click', function () {
-                panel.classList.add('d-none');
-            });
-        }
-    })();
-</script>
 </body>
 </html>
