@@ -1,0 +1,145 @@
+/* Customization point: keep storefront styling here so Bootstrap remains easy to upgrade. */
+:root {
+    --store-ink: #1f2937;
+    --store-muted: #6b7280;
+    --store-accent: #0f766e;
+    --store-warm: #f59e0b;
+}
+
+body {
+    color: var(--store-ink);
+    background: #f8fafc;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
+.navbar-brand .site-logo {
+    display: block;
+    width: auto;
+    height: 32px;
+    max-width: 120px;
+    max-height: 32px;
+    object-fit: contain;
+    flex: 0 0 auto;
+}
+
+.settings-logo-preview {
+    width: auto;
+    max-width: 220px;
+    max-height: 90px;
+    object-fit: contain;
+}
+
+.settings-favicon-preview {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.hero-slide {
+    min-height: 430px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(15, 23, 42, .78), rgba(15, 23, 42, .18));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+}
+
+.product-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(15, 23, 42, .08);
+}
+
+.product-card img,
+.category-tile img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.section-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.shop-pagination .pagination {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .35rem;
+    margin-bottom: 0;
+}
+
+.pagination .page-link {
+    border-radius: 8px;
+    color: var(--store-ink);
+    min-width: 2.35rem;
+    text-align: center;
+}
+
+.pagination .page-item.active .page-link {
+    background: var(--store-ink);
+    border-color: var(--store-ink);
+    color: #fff;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: var(--store-muted);
+}
+
+.live-chat-widget {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 1030;
+    border-radius: 8px;
+}
+
+.live-chat-panel {
+    position: fixed;
+    right: 1rem;
+    bottom: 4.5rem;
+    z-index: 1030;
+    width: min(340px, calc(100vw - 2rem));
+    overflow: hidden;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.live-chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .85rem 1rem;
+    color: #fff;
+    background: var(--store-accent);
+}
+
+.admin-sidebar {
+    min-height: calc(100vh - 56px);
+}
+
+.status-pill {
+    text-transform: capitalize;
+}
