@@ -21,7 +21,13 @@
             <div class="bg-white border rounded p-4">
                 <h2 class="h5">Order Summary</h2>
                 @foreach($items as $item)
-                    <div class="d-flex justify-content-between border-bottom py-2"><span>{{ $item['product']->name }} x {{ $item['quantity'] }}</span><span>${{ number_format($item['line_total'], 2) }}</span></div>
+                    <div class="d-flex justify-content-between border-bottom py-2 gap-3">
+                        <span>
+                            {{ $item['product']->name }} x {{ $item['quantity'] }}
+                            <span class="d-block small text-muted">Unit Price: ${{ number_format($item['unit_price'], 2) }}</span>
+                        </span>
+                        <span>${{ number_format($item['line_total'], 2) }}</span>
+                    </div>
                 @endforeach
                 <div class="d-flex justify-content-between pt-3"><strong>Subtotal</strong><strong>${{ number_format($subtotal, 2) }}</strong></div>
                 <div class="small text-muted mt-2">Shipping is free for orders over $100; otherwise $10.</div>

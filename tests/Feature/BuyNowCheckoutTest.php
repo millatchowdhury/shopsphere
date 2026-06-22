@@ -36,6 +36,7 @@ class BuyNowCheckoutTest extends TestCase
         $this->get(route('checkout.create', ['buy_now' => 1]))
             ->assertOk()
             ->assertSee($buyNowProduct->name)
+            ->assertSee('Unit Price: $25.00')
             ->assertDontSee($cartProduct->name);
 
         $this->post(route('checkout.store'), [
@@ -78,7 +79,8 @@ class BuyNowCheckoutTest extends TestCase
 
         $this->get(route('checkout.create', ['buy_now' => 1]))
             ->assertOk()
-            ->assertSee($product->name);
+            ->assertSee($product->name)
+            ->assertSee('Unit Price: $25.00');
 
         $this->post(route('checkout.store'), [
             'customer_name' => 'Guest Customer',
