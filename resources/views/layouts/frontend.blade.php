@@ -63,24 +63,28 @@
     </div>
 </footer>
 
-<div class="live-chat-shell" data-live-chat>
+<div class="live-chat-shell" data-live-chat data-messages-url="{{ route('live-chat.messages') }}">
     <section class="live-chat-panel shadow d-none" data-live-chat-panel aria-label="Live chat">
         <div class="live-chat-header">
             <div>
                 <div class="fw-semibold">Live Chat</div>
-                <div class="small text-white-50">Send us a message</div>
+                <div class="small text-white-50">Chat with an admin</div>
             </div>
             <button class="btn btn-sm btn-outline-light" type="button" data-live-chat-close aria-label="Close live chat">x</button>
+        </div>
+        <div class="live-chat-messages" data-live-chat-messages aria-live="polite">
+            <div class="live-chat-empty text-muted">Send a message to start chatting.</div>
         </div>
         <form class="live-chat-form" data-live-chat-form method="POST" action="{{ route('live-chat.store') }}">
             @csrf
             <div class="p-3">
                 <div class="alert alert-success d-none mb-3" data-live-chat-success></div>
                 <div class="alert alert-danger d-none mb-3" data-live-chat-error></div>
+                <input type="hidden" name="conversation_id" data-live-chat-conversation>
                 <input class="form-control form-control-sm mb-2" name="name" placeholder="Name">
                 <input class="form-control form-control-sm mb-2" type="email" name="email" placeholder="Email">
                 <input class="form-control form-control-sm mb-2" name="phone" placeholder="Phone">
-                <textarea class="form-control form-control-sm mb-3" name="message" rows="4" placeholder="How can we help?" required></textarea>
+                <textarea class="form-control form-control-sm mb-3" name="message" rows="3" placeholder="How can we help?" required></textarea>
                 <button class="btn btn-success w-100" type="submit" data-live-chat-submit>Send Message</button>
             </div>
         </form>

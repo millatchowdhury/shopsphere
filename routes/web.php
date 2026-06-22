@@ -35,6 +35,7 @@ Route::get('/products', [ProductController::class, 'index'])->name('products.ind
 Route::get('/products/{product:slug}', [ProductController::class, 'show'])->name('products.show');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::get('/live-chat/messages', [LiveChatController::class, 'messages'])->name('live-chat.messages');
 Route::post('/live-chat', [LiveChatController::class, 'store'])->name('live-chat.store');
 
 Route::middleware('guest')->group(function () {
@@ -71,9 +72,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::resource('orders', AdminOrderController::class)->only(['index', 'show', 'update']);
     Route::resource('customers', AdminCustomerController::class)->only(['index', 'show']);
     Route::get('live-chat', [AdminLiveChatController::class, 'index'])->name('live-chat.index');
+    Route::post('live-chat/{conversation}/reply', [AdminLiveChatController::class, 'reply'])->name('live-chat.reply');
     Route::patch('live-chat/{liveChatMessage}', [AdminLiveChatController::class, 'update'])->name('live-chat.update');
     Route::delete('live-chat/{liveChatMessage}', [AdminLiveChatController::class, 'destroy'])->name('live-chat.destroy');
     Route::get('settings', [AdminSiteSettingController::class, 'edit'])->name('settings.edit');
     Route::put('settings', [AdminSiteSettingController::class, 'update'])->name('settings.update');
 });
-

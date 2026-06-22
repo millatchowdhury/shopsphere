@@ -126,6 +126,48 @@ body {
     background: #fff;
 }
 
+.live-chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    min-height: 120px;
+    max-height: 260px;
+    overflow-y: auto;
+    padding: .85rem;
+    background: #f8fafc;
+}
+
+.live-chat-empty {
+    font-size: .875rem;
+}
+
+.live-chat-bubble {
+    max-width: 86%;
+    padding: .55rem .7rem;
+    border-radius: 8px;
+    font-size: .9rem;
+    line-height: 1.35;
+}
+
+.live-chat-bubble-customer {
+    align-self: flex-end;
+    color: #fff;
+    background: var(--store-accent);
+}
+
+.live-chat-bubble-admin {
+    align-self: flex-start;
+    color: var(--store-ink);
+    background: #e5e7eb;
+}
+
+.live-chat-meta {
+    display: block;
+    margin-top: .25rem;
+    font-size: .7rem;
+    opacity: .78;
+}
+
 .live-chat-header {
     display: flex;
     align-items: center;
@@ -142,4 +184,32 @@ body {
 
 .status-pill {
     text-transform: capitalize;
+}
+
+.admin-chat-thread {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    max-height: 360px;
+    overflow-y: auto;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #f8fafc;
+}
+
+.admin-chat-bubble {
+    max-width: 760px;
+    padding: .75rem .9rem;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.admin-chat-bubble-admin {
+    margin-left: auto;
+    background: #dcfce7;
+}
+
+.admin-chat-bubble-customer {
+    margin-right: auto;
 }
